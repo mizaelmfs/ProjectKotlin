@@ -68,7 +68,6 @@ enum class Risk(val risk: Int){
     LOW(1),
     LOW_REGULAR(2),
     REGULAR(3),
-    MEDIUM(4),
-    MEDIUM_HIGH(5),
-    HIGH(6)
+    REGULAR_HIGH(4),
+    HIGH(5)
 }

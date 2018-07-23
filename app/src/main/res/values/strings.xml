@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ProjectKotlin</string>
+    <string name="investment">Investment</string>
+    <string name="contact">Contat</string>
+</resources>

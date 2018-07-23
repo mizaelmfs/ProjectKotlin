@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ProjectKotlin</string>
+    <string name="investment">Investmento</string>
+    <string name="contact">Contato</string>
+</resources>

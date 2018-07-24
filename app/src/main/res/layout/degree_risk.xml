@@ -3,6 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:gravity="center"
     android:orientation="horizontal">
 
     <LinearLayout
@@ -21,7 +22,7 @@
         <View
             android:layout_width="60dp"
             android:layout_height="7dp"
-            android:background="@android:color/holo_green_light"/>
+            android:background="@color/low"/>
 
     </LinearLayout>
 
@@ -41,7 +42,7 @@
         <View
             android:layout_width="60dp"
             android:layout_height="7dp"
-            android:background="@android:color/holo_green_light"/>
+            android:background="@color/low_regular"/>
 
     </LinearLayout>
 
@@ -61,7 +62,7 @@
         <View
             android:layout_width="60dp"
             android:layout_height="7dp"
-            android:background="@android:color/holo_green_light"/>
+            android:background="@color/regular"/>
 
     </LinearLayout>
 
@@ -81,7 +82,7 @@
         <View
             android:layout_width="60dp"
             android:layout_height="7dp"
-            android:background="@android:color/holo_green_light"/>
+            android:background="@color/regular_high"/>
 
     </LinearLayout>
 
@@ -101,7 +102,7 @@
         <View
             android:layout_width="60dp"
             android:layout_height="7dp"
-            android:background="@android:color/holo_green_light"/>
+            android:background="@color/high"/>
 
     </LinearLayout>
 

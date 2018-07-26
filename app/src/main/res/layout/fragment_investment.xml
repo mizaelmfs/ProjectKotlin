@@ -146,6 +146,8 @@
                 app:layout_constraintTop_toBottomOf="@+id/more_info_tv"
                 app:layout_constraintVertical_chainStyle="packed">
 
+
+
             </RelativeLayout>
 
             <View
@@ -169,6 +171,7 @@
                 android:layout_marginTop="24dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
+                tools:listitem="@layout/item_info"
                 app:layout_constraintTop_toBottomOf="@+id/view">
 
             </android.support.v7.widget.RecyclerView>
@@ -180,11 +183,11 @@
                 android:layout_marginBottom="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/info_recycler" />
+                app:layout_constraintTop_toBottomOf="@+id/info_recycler"
+                tools:listitem="@layout/item_down_info" />
 
         </android.support.constraint.ConstraintLayout>
 

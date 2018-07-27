@@ -17,6 +17,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginBottom="5dp"
+            android:visibility="invisible"
             android:src="@drawable/shape_normal"/>
 
         <View
@@ -37,6 +38,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginBottom="5dp"
+            android:visibility="invisible"
             android:src="@drawable/shape_normal"/>
 
         <View
@@ -57,6 +59,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginBottom="5dp"
+            android:visibility="invisible"
             android:src="@drawable/shape_normal"/>
 
         <View
@@ -77,6 +80,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginBottom="5dp"
+            android:visibility="invisible"
             android:src="@drawable/shape_normal"/>
 
         <View
@@ -97,6 +101,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginBottom="5dp"
+            android:visibility="invisible"
             android:src="@drawable/shape_normal"/>
 
         <View

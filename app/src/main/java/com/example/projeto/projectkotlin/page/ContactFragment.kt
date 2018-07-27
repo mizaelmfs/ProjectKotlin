@@ -1,4 +1,4 @@
-package com.example.projeto.projectkotlin.fragment
+package com.example.projeto.projectkotlin.page
 
 
 import android.os.Bundle

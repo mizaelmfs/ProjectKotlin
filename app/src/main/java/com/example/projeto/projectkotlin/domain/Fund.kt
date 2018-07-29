@@ -64,10 +64,15 @@ data class DownInfo (
 
 )
 
-enum class Risk(val risk: Int){
-    LOW(1),
-    LOW_REGULAR(2),
-    REGULAR(3),
-    REGULAR_HIGH(4),
-    HIGH(5)
+enum class Risk{
+    @SerializedName("1")
+    LOW,
+    @SerializedName("2")
+    LOW_REGULAR,
+    @SerializedName("3")
+    REGULAR,
+    @SerializedName("4")
+    REGULAR_HIGH,
+    @SerializedName("5")
+    HIGH
 }

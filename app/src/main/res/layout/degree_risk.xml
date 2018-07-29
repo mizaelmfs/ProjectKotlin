@@ -1,116 +1,125 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<layout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:gravity="center"
-    android:orientation="horizontal">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="risk"
+            type="com.example.projeto.projectkotlin.domain.Risk"/>
+
+        <import type="com.example.projeto.projectkotlin.domain.Risk"/>
+        <import type="android.view.View"/>
+    </data>
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="1dp"
-        android:orientation="vertical">
+        android:gravity="center_horizontal|bottom"
+        android:orientation="horizontal">
 
-        <ImageView
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginBottom="5dp"
-            android:visibility="invisible"
-            android:src="@drawable/shape_normal"/>
+            android:layout_marginEnd="1dp"
+            android:orientation="vertical">
 
-        <View
-            android:layout_width="60dp"
-            android:layout_height="7dp"
-            android:background="@drawable/shape_risk_start"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="5dp"
+                android:src="@drawable/shape_normal"
+                android:visibility="@{risk == Risk.LOW ? View.VISIBLE : View.INVISIBLE}" />
 
-    </LinearLayout>
+            <View
+                android:layout_width="60dp"
+                android:layout_height="@{risk == Risk.LOW ? @dimen/height_selected : @dimen/height_normal, default=@dimen/height_normal}"
+                android:background="@drawable/shape_risk_start" />
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="1dp"
-        android:orientation="vertical">
+        </LinearLayout>
 
-        <ImageView
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginBottom="5dp"
-            android:visibility="invisible"
-            android:src="@drawable/shape_normal"/>
+            android:layout_marginEnd="1dp"
+            android:orientation="vertical">
 
-        <View
-            android:layout_width="60dp"
-            android:layout_height="7dp"
-            android:background="@color/low_regular"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="5dp"
+                android:src="@drawable/shape_normal"
+                android:visibility="@{risk == Risk.LOW_REGULAR ? View.VISIBLE : View.INVISIBLE}" />
 
-    </LinearLayout>
+            <View
+                android:layout_width="60dp"
+                android:layout_height="@{risk == Risk.LOW_REGULAR ? @dimen/height_selected : @dimen/height_normal, default=@dimen/height_normal}"
+                android:background="@color/low_regular" />
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="1dp"
-        android:orientation="vertical">
+        </LinearLayout>
 
-        <ImageView
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginBottom="5dp"
-            android:visibility="invisible"
-            android:src="@drawable/shape_normal"/>
+            android:layout_marginEnd="1dp"
+            android:orientation="vertical">
 
-        <View
-            android:layout_width="60dp"
-            android:layout_height="7dp"
-            android:background="@color/regular"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="5dp"
+                android:src="@drawable/shape_normal"
+                android:visibility="@{risk == Risk.REGULAR ? View.VISIBLE : View.INVISIBLE}" />
 
-    </LinearLayout>
+            <View
+                android:layout_width="60dp"
+                android:layout_height="@{risk == Risk.REGULAR ? @dimen/height_selected : @dimen/height_normal, default=@dimen/height_normal}"
+                android:background="@color/regular" />
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="1dp"
-        android:orientation="vertical">
+        </LinearLayout>
 
-        <ImageView
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginBottom="5dp"
-            android:visibility="invisible"
-            android:src="@drawable/shape_normal"/>
+            android:layout_marginEnd="1dp"
+            android:orientation="vertical">
 
-        <View
-            android:layout_width="60dp"
-            android:layout_height="7dp"
-            android:background="@color/regular_high"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="5dp"
+                android:src="@drawable/shape_normal"
+                android:visibility="@{risk == Risk.REGULAR_HIGH ? View.VISIBLE : View.INVISIBLE}" />
 
-    </LinearLayout>
+            <View
+                android:layout_width="60dp"
+                android:layout_height="@{risk == Risk.REGULAR_HIGH ? @dimen/height_selected : @dimen/height_normal, default=@dimen/height_normal}"
+                android:background="@color/regular_high" />
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="1dp"
-        android:orientation="vertical">
+        </LinearLayout>
 
-        <ImageView
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginBottom="5dp"
-            android:visibility="invisible"
-            android:src="@drawable/shape_normal"/>
+            android:layout_marginEnd="1dp"
+            android:orientation="vertical">
 
-        <View
-            android:layout_width="60dp"
-            android:layout_height="7dp"
-            android:background="@drawable/shape_risk_end"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="5dp"
+                android:src="@drawable/shape_normal"
+                android:visibility="@{risk == Risk.HIGH ? View.VISIBLE : View.INVISIBLE}" />
 
+            <View
+                android:layout_width="60dp"
+                android:layout_height="@{risk == Risk.HIGH ? @dimen/height_selected : @dimen/height_normal, default=@dimen/height_normal}"
+                android:background="@drawable/shape_risk_end" />
+
+        </LinearLayout>
     </LinearLayout>
-
-
-
-</LinearLayout>
+</layout>

@@ -1,4 +1,4 @@
-package com.example.projeto.projectkotlin.page
+package com.example.projeto.projectkotlin.page.contact
 
 
 import android.os.Bundle

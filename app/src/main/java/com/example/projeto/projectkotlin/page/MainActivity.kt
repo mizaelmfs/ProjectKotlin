@@ -1,61 +1,51 @@
 package com.example.projeto.projectkotlin.page
 
-import android.support.v7.app.AppCompatActivity
+import android.databinding.DataBindingUtil
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v4.app.FragmentManager
-import android.widget.Button
+import android.support.v7.app.AppCompatActivity
 import com.example.projeto.projectkotlin.R
+import com.example.projeto.projectkotlin.databinding.ActivityMainBinding
+import com.example.projeto.projectkotlin.page.contact.ContactFragment
 import com.example.projeto.projectkotlin.page.investment.InvestmentFragment
+import com.example.projeto.projectkotlin.page.mainViewPresenter.IMainPresenter
+import com.example.projeto.projectkotlin.page.mainViewPresenter.MainPresenter
 import com.example.projeto.projectkotlin.ultis.PageAnimation
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var  btnInvestment : Button
-    private lateinit var  btnContact : Button
 
     private lateinit var investmentFragment : InvestmentFragment
     private lateinit var contactFragment: ContactFragment
+    private lateinit var binding: ActivityMainBinding
 
-    private lateinit var fragmentManager: FragmentManager
+    private lateinit var presenter: IMainPresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-
-        btnInvestment       = findViewById(R.id.btn_investment)
-        btnContact          = findViewById(R.id.btn_contact)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
         investmentFragment  = InvestmentFragment()
         contactFragment     = ContactFragment()
 
-        fragmentManager     = supportFragmentManager
+        presenter = MainPresenter()
 
-        changeFragment(investmentFragment, null, R.id.container_fragment)
+        presenter.setBinding(binding)
 
-        btnInvestment.setOnClickListener {
-            changeFragment(investmentFragment, PageAnimation.SLIDE_LEFT_TO_RIGHT, R.id.container_fragment)
+        presenter.setSupportFragmentManager(supportFragmentManager)
+
+        presenter.changeFragment(investmentFragment, null, R.id.container_fragment)
+        presenter.changeBackgroundColor(binding.btnInvestment)
+
+        binding.btnInvestment.setOnClickListener {
+            presenter.changeFragment(investmentFragment, PageAnimation.SLIDE_LEFT_TO_RIGHT, R.id.container_fragment)
+            presenter.changeBackgroundColor(it)
         }
 
-        btnContact.setOnClickListener {
-            changeFragment(contactFragment, PageAnimation.SLIDE_RIGHT_TO_LEFT, R.id.container_fragment)
+        binding.btnContact.setOnClickListener {
+            presenter.changeFragment(contactFragment, PageAnimation.SLIDE_RIGHT_TO_LEFT, R.id.container_fragment)
+            presenter.changeBackgroundColor(it)
         }
 
-    }
-
-
-    private fun changeFragment(fragment: Fragment, pageAnimation: PageAnimation?, containerId: Int) {
-        val fragmentTransaction = supportFragmentManager.beginTransaction()
-
-        if (pageAnimation != null) {
-            val enter = pageAnimation.inTransition
-            val exit = pageAnimation.outTransition
-            if (enter > 0 && exit > 0) {
-                fragmentTransaction.setCustomAnimations(enter, exit)
-            }
-        }
-
-        fragmentTransaction.replace(containerId, fragment).commit()
     }
 
 }

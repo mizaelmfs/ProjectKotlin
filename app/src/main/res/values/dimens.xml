@@ -2,4 +2,7 @@
 <resources>
     <dimen name="height_normal">7dp</dimen>
     <dimen name="height_selected">12dp</dimen>
+
+    <dimen name="height_button_bottom_new">50dp</dimen>
+    <dimen name="height_button_bottom_old">48dp</dimen>
 </resources>

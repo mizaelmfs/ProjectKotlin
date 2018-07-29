@@ -25,4 +25,6 @@
     <color name="button_background">#DA0101</color>
     <color name="button_pressed">#EB7676</color>
 
+    <color name="button_pressed_bottom">#a40101</color>
+
 </resources>

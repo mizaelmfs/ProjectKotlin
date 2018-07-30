@@ -1,6 +1,5 @@
 package com.example.projeto.projectkotlin.page.investment.presenter
 
-import com.example.projeto.projectkotlin.databinding.FragmentInvestmentBinding
 import com.example.projeto.projectkotlin.domain.Fund
 
 interface IFundPresenter {
